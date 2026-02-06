@@ -1,0 +1,12 @@
+<div class="mb-6 text-xl font-semibold">
+  Total métricas: {{ total() }}
+</div>
+
+<div class="grid grid-cols-4 gap-6">
+  @for (card of cards(); track card.title) {
+    <app-dashboard-card
+      [card]="card"
+      (cardClick)="onCardClick(card.title)"
+    />
+  }
+</div>

@@ -1,0 +1,21 @@
+<div class="h-screen flex flex-col">
+  <!-- HEADER -->
+  <app-header />
+
+  <!-- BODY -->
+  <div class="flex flex-1 overflow-hidden">
+    <!-- SIDEBAR -->
+    <aside
+      class="transition-all duration-300 bg-slate-800 text-white"
+      [class.w-64]="layout.sidebarOpen()"
+      [class.w-20]="!layout.sidebarOpen()"
+    >
+      <app-sidebar />
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="flex-1 bg-slate-100 p-8">
+      <router-outlet />
+    </main>
+  </div>
+</div>
